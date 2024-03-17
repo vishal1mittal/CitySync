@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Traffic Monitor and Collision Avoidance System</title>
+		<link rel="stylesheet" href="style.css" />
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="/getStyles/getStyles.css" />
+		<script src="/getStyles/getStyles.js"></script>
+		<script src="/js/aos.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+	</head>
+	<body class="h-screen">
+		<header
+			effect="fade-down"
+			class="bg-white h-80 bb-2 border-gray-300 solid">
+			<nav class="flex aic jcsb h-80 container">
+				<div class="flex aic jcc gap-lg">
+					<!-- <img src="/logo/logo.png" alt="" class="w-48" /> -->
+					<p class="fw-700 fs-24 font-primary">
+						<abbr
+							title="Realtime Path Analysis with Config Panel"
+							>CitySync</abbr
+						>
+					</p>
+				</div>
+				<p class="fw-700 fs-24 font-primary">Team Phoenix Flames</p>
+			</nav>
+		</header>
+		<main class="flex" style="height: calc(100vh - 80px)">
+			<div
+				id="mapSelection"
+				class="h-full br-2 border-gray-300 solid flex aic jcc gap-auto fd-column"
+				style="width: 280px; height: calc(100vh - 80px)">
+				<!-- slider to get value from 0 to 100 -->
+				<input
+					type="range"
+					min="60"
+					max="600"
+					step="10"
+					value="50"
+					id="slider" />
+				<span id="sliderVal"></span>
+				<input
+					type="range"
+					min="20"
+					max="80"
+					step="12"
+					value="40"
+					id="precision" />
+				<span id="precisionVal"></span>
+				<img
+					src="/road_1.png"
+					alt=""
+					class="w-248 border-transparent border-2 solid"
+					onclick="updateMap(1)" />
+				<img
+					src="/road_2.png"
+					alt=""
+					class="w-248 border-transparent border-2 solid"
+					onclick="updateMap(2)" />
+				<img
+					src="/road_3.png"
+					alt=""
+					class="w-248 border-transparent border-2 solid"
+					onclick="updateMap(3)" />
+			</div>
+			<div
+				id="map"
+				class="bg-gray-950 aspect-square relative"
+				style="width: 600px; height: 600px"></div>
+			<div
+				id="mapPrev"
+				class="bg-gray-950 aspect-square relative"
+				style="width: 600px; height: 600px"></div>
+			<div id="configPanel" class="flex fd-column">
+				<div id="vehiclePath"></div>
+				<div id="config"></div>
+				<div id="logs"></div>
+			</div>
+		</main>
+		<script src="/index.js"></script>
+	</body>
+</html>
