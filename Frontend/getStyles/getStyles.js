@@ -151,7 +151,7 @@ function typewriterOnVisible(element, variationArray) {}
 
 $(document).ready(async function () {
 	AOS.init();
-	cssFile = await fetch("getStyles/getStyles.css");
+	cssFile = await fetch("./getStyles/getStyles.css");
 	cssText = await cssFile.text();
 	cssBlocks = cssText.split("}");
 	// await loadAll();

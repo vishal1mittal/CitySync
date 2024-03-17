@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	// load header and footer
-	$("header").load("/components/header/index.html", function () {
+	$("header").load("./components/header/index.html", function () {
 		$("header").toggleClass("fixed top-0 w-screen h-96 sm-h-96 z-12 overflow-hidden");
 		var header = $("header");
 		$(window).scroll(function () {
@@ -36,5 +36,5 @@ $(document).ready(function () {
 			}
 		});
 	});
-	$("footer").load("/components/footer/index.html");
+	$("footer").load("./components/footer/index.html");
 });
